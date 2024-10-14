@@ -24,7 +24,7 @@ def load_file(filename: str = "") -> str:
 def main():
 
     # Load source file
-    source_text = load_file("data/source.txt")
+    source_text = load_file("data/mysource.txt")
 
     # Create a chain of thought prompt to guide GPT through the analysis
     messages = [
@@ -41,8 +41,8 @@ def main():
     response = openai.chat.completions.create(
         model="gpt-4o",
         messages=messages,
-        max_tokens=500,
-        temperature=0.7
+        max_tokens=600,
+        temperature=0.3
     )
 
     # Extract and print the response
